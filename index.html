@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>ChipIn Prototype</title>
+<meta name="description" content="Track the money at your home poker games.">
+
+<!-- Web app: runs full screen, without browser bars, once added to a phone's home screen -->
+<meta name="theme-color" content="#121212">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ChipIn">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="scripts.js" defer></script>
+</head>
+<body>
+<div class="layout">
+  <div class="phone" id="app" aria-label="ChipIn app"></div>
+
+  <aside class="study" id="study" aria-labelledby="study-title">
+    <header class="study-head">
+      <div>
+        <p class="label">For the moderator</p>
+        <h2 id="study-title">ChipIn user study</h2>
+      </div>
+      <button class="study-close" id="study-close">Back to app</button>
+    </header>
+    <p>Read the setup out loud, then give one task at a time. Don't help. Press Reset before each new person. The log records every tap, including taps on gray buttons.</p>
+    <p class="phone-only">On a phone, this panel stays hidden. Hold two fingers on the screen for a second to open it. Reset closes it so you can hand the phone over.</p>
+    <section>
+      <p class="label">Setup</p>
+      <p>You're Marcus, the banker at a Friday game. You hold everyone's money and pay them at the end.</p>
+    </section>
+    <section>
+      <p class="label">Tasks</p>
+      <ol>
+        <li>You forgot what a red chip is worth. Find out.</li>
+        <li>Diego lost his stack and wants to buy back in for $10, but only in green $1 chips. Log his rebuy.</li>
+        <li>The game's over. Go to cash out and figure out why the totals don't match.</li>
+        <li>Fix Jordan's count so the totals match. (Jordan actually has 3 green chips.)</li>
+        <li>Pay Diego what his chips are worth.</li>
+      </ol>
+    </section>
+    <p>Venmo is pretend. Coming back from it always marks the player Paid, even after Cancel.</p>
+    <div class="btns">
+      <button id="reset">Reset for next person</button>
+      <button id="copy">Copy log</button>
+    </div>
+    <section>
+      <p class="label">Tap log</p>
+      <ol class="log" id="log"></ol>
+    </section>
+  </aside>
+</div>
+</body>
+</html>
